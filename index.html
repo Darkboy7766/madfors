@@ -1,15 +1,41 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>madfors – practical apps by an independent developer</title>
-<meta name="description" content="madfors: practical apps by an independent developer from Varna, Bulgaria.">
+<meta name="description" content="madfors: small, practical apps with no sign-ups and no ads, by an independent developer from Varna, Bulgaria.">
+<meta name="theme-color" content="#2d7a5f">
 <link rel="stylesheet" href="/style.css"></head>
 <body>
-<header><h1>madfors</h1><p>Independent developer from Varna, Bulgaria, building practical apps.</p></header>
-<main>
-<h2>Apps</h2>
-<div class="card"><h3>Какво да сготвя? <small>(What should I cook?)</small></h3>
-<p>Take a photo of your fridge and get recipe ideas, powered by Google Gemini.</p>
-<p><a href="/kakvo-da-sgotvya/privacy">Privacy policy</a> · <a href="/kakvo-da-sgotvya/privacy-bg">Политика за поверителност</a></p></div>
-</main>
-<footer>Contact: <a href="mailto:contact@madfors.com">contact@madfors.com</a> · <a href="/kakvo-da-sgotvya/privacy">Privacy policy</a> · © madfors</footer>
+<div class="wrap">
+<nav><a class="logo" href="/">mad<span>fors</span></a>
+<div class="lang"><button data-l="en" class="on">EN</button> <button data-l="bg">БГ</button></div></nav>
+
+<section class="hero">
+<h1><span data-l="en">Small apps that solve real problems.</span><span data-l="bg" hidden>Малки приложения, които решават истински проблеми.</span></h1>
+<p><span data-l="en">I'm an independent developer from Varna, Bulgaria. I build practical apps with no sign-ups, no ads and no tracking.</span><span data-l="bg" hidden>Аз съм независим разработчик от Варна. Правя практични приложения – без регистрация, без реклами и без проследяване.</span></p>
+</section>
+
+<h2><span data-l="en">Apps</span><span data-l="bg" hidden>Приложения</span></h2>
+<article class="card">
+<div>
+<h3>Какво да сготвя?</h3><p class="sub">What to Cook?</p>
+<p data-l="en">Snap your open fridge or pantry and instantly discover recipes. Powered by Google Gemini.</p>
+<p data-l="bg" hidden>Снимай отворения хладилник или килера си и веднага получи идеи за рецепти. С помощта на Google Gemini.</p>
+<ul data-l="en"><li>Take up to 3 photos or add ingredients by hand</li><li>Filter by cooking time and diet</li><li>No account – photos are not stored on our servers</li></ul>
+<ul data-l="bg" hidden><li>До 3 снимки или добавяне на съставки ръчно</li><li>Филтри по време за готвене и диета</li><li>Без акаунт – снимките не се съхраняват на наши сървъри</li></ul>
+<a class="btn off" href="#"><span data-l="en">Google Play – coming soon</span><span data-l="bg" hidden>Google Play – скоро</span></a>
+<div class="links"><a href="/kakvo-da-sgotvya/privacy">Privacy policy</a> · <a href="/kakvo-da-sgotvya/privacy-bg">Политика за поверителност</a></div>
+</div>
+<img src="/app-screenshot.png" alt="Screenshot of the app Какво да сготвя?" width="562" height="1088" loading="lazy">
+</article>
+
+<footer>
+<span data-l="en">Contact</span><span data-l="bg" hidden>Контакт</span>: <a href="mailto:contact@madfors.com">contact@madfors.com</a> ·
+<a href="/kakvo-da-sgotvya/privacy">Privacy policy</a> · © 2026 madfors · Varna, Bulgaria
+</footer>
+</div>
+<script>
+(function(){var l="en";try{l=localStorage.getItem("l")||((navigator.language||"").slice(0,2)==="bg"?"bg":"en")}catch(e){}
+function set(x){document.documentElement.lang=x;document.querySelectorAll("[data-l]").forEach(function(e){if(e.tagName!=="BUTTON")e.hidden=e.dataset.l!==x});document.querySelectorAll(".lang button").forEach(function(b){b.classList.toggle("on",b.dataset.l===x)});try{localStorage.setItem("l",x)}catch(e){}}
+document.querySelectorAll(".lang button").forEach(function(b){b.onclick=function(){set(b.dataset.l)}});set(l)})();
+</script>
 </body></html>
